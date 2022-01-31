@@ -489,26 +489,84 @@ class Woman: Human {
 let woman = Woman(age: "age", head: 1, body: 1)
 woman.aboutPeople()
 
-protocol Driver {
+
+
+
+
+
+
+
+protocol DoubleLegsCreatures {
+    var head: Bool { get }
+    var twoLegs: Bool { get }
+    var twoHands: Bool { get }
+
+func creatures() -> Bool
+
+}
+
+extension DoubleLegsCreatures {
     
-    var car: Bool { get }
-    var licence: Bool { get }
+    var head: Bool {return true}
+    var twoLegs: Bool {return true}
+    var twoHands: Bool {return true}
     
-    func toDrive () -> Bool
+    func creatures() -> Bool {
+        return true}
+}
+extension People: DoubleLegsCreatures {
     
+    }
+
+    class People {
+        
+}
+
+let people = People()
+people.head
+people.twoLegs
+people.twoHands
+
+// 30.01.2022
+
+let intArray = [1, 2, 3, 4]
+let stringArray = ["c", "d", "e", "f"]
+func printInts(array:[Int]) {
+    print(intArray)
+}
+
+func printString(array: [String]) {
+    print(stringArray)
+}
+
+func print<T>(array: [T]) {
+    print(stringArray)
 }
 
 
-extension Driver {
-    var car: Bool {return true}
-    var licence: Bool {return true}
+struct Box<T: Equatable> {
+    let objects: [T]
+    
+    func hasObject(_ object: T) -> Bool {
+        return objects.contains(object)
+        }
+    }
 
-    func toDrive() -> Bool {
-        return true
+extension Box where T: Hashable {
+    
+    func remove(by object: T) {
+        
     }
 }
-class FirmDriver: Driver {
 
+let box = Box(objects: ["said"])
+
+
+
+
+
+func homeWork <B: Equatable>(human: B) {
+    print ("There is a \(human)")
 }
-let firmDriver = FirmDriver()
-firmDriver.licence
+
+
