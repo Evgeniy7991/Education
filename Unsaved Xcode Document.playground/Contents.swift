@@ -158,12 +158,33 @@ class Scientists {
 
 
 
+func Yagt <C> (f: C) -> C {
+    return f
+}
 
+protocol ForFunc {
+}
 
+class Class: ForFunc {
 
+    var aa = "Petya"
+    var bb = "Lena"
+    
+}
 
+class Class1: ForFunc {
+    
+    var cc = 32
+    var kk = 28
+}
 
+let Class0 = Class()
+Yagt(f: Class0.aa)
+Yagt(f: Class0.bb)
 
+let Class11 = Class1()
+Yagt(f: Class11.cc)
+Yagt(f: Class11.kk)
 
 
 
@@ -192,7 +213,6 @@ class GenericDemo {
         b = temp
     }
 }
-
 
 var n1 = 100
 var n2 = 200
