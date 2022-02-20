@@ -186,55 +186,111 @@ let Class11 = Class1()
 Yagt(f: Class11.cc)
 Yagt(f: Class11.kk)
 
+var num1 = 1
+var num2 = 1
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class GenericDemo {
-    class func swap<A> (_ a: inout A, _ b: inout A) {
-        let temp = a
-        a = b
-        b = temp
-    }
+func rec (n:Int) -> Int {
+    guard n > 1 else {return n}
+    return (rec(n: n-1) + rec(n: n-2));
 }
 
-var n1 = 100
-var n2 = 200
-
-GenericDemo.swap (&n1, &n2)
-
-var s1 = "s1"
-var s2 = "s2"
-
-print("s1=\(s1) <-> s2=\(s2)")
-GenericDemo.swap (&s1, &s2)
-print("swap\ns1=\(s1) <-> s2=\(s2)")
+rec(n: 7)
 
 
 
-var a1 = 200
-var a2 = 300
-var a3 = "var"
 
-func ya<B> (vasya: B) {
-    return
+
+
+
+
+
+
+
+
+//class GenericDemo {
+//    class func swap<A> (_ a: inout A, _ b: inout A) {
+//        let temp = a
+//        a = b
+//        b = temp
+//    }
+//}
+//
+//var n1 = 100
+//var n2 = 200
+//
+//GenericDemo.swap (&n1, &n2)
+//
+//var s1 = "s1"
+//var s2 = "s2"
+//
+//print("s1=\(s1) <-> s2=\(s2)")
+//GenericDemo.swap (&s1, &s2)
+//print("swap\ns1=\(s1) <-> s2=\(s2)")
+//
+//
+//
+//var a1 = 200
+//var a2 = 300
+//var a3 = "var"
+//
+//func ya<B> (vasya: B) {
+//    return
+//}
+
+
+
+let driving = {
+    print("I am driving in my car")
 }
 
+driving()
 
 
+
+
+
+let payment = {(user: String, amount: Int) in
+    //code
+}
+
+func pay(user: String, amount: Int) {
+//code
+}
+    let driving2 = { (place: String) in
+        print("I am going to \(place) in my car")
+        
+}
+
+driving2("London")
+
+let drivingWithReturn = {(place1: String) -> String in
+    return "I am going to \(place1) in my car"
+}
+
+let message = drivingWithReturn("London")
+
+print(message)
+
+let payment2 = {(user: String) in
+    print("Paying \(user)...")
+}
+
+let payment3 = {(user: String) -> Bool in
+    print("Paying \(user)...")
+    return true
+}
+
+let numbers = [2, 3, 4, 5]
+let result = numbers.map({ $0 * $0 })
+
+print(result)
+
+let celsius = [-5.0, 10.0, 21.0, 33.0, 50.0]
+let fahrenheit = celsius.map { $0 * (9/5) + 32}
+print (fahrenheit)
+
+let numbers1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+let result1 = numbers1.flatMap({ $0 })
+
+print(result1)
