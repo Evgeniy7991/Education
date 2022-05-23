@@ -281,10 +281,10 @@ let payment3 = {(user: String) -> Bool in
     return true
 }
 
-let numbers = [2, 3, 4, 5]
-let result = numbers.map({ $0 * $0 })
+//let numbers = [2, 3, 4, 5]
+//let result = numbers.map({ $0 * $0 })
 
-print(result)
+//print(result)
 
 let celsius = [-5.0, 10.0, 21.0, 33.0, 50.0]
 let fahrenheit = celsius.map { $0 * (9/5) + 32}
@@ -294,3 +294,52 @@ let numbers1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 let result1 = numbers1.flatMap({ $0 })
 
 print(result1)
+
+
+
+let dictOne = Dictionary<String, String>()
+let dictTwo = [String: String]()
+let dictThree: [String: String] = [:]
+
+
+
+
+
+//class lightcar: Car {
+//
+//    var countCar: Int
+//    var conditionalCar: Bool
+//    
+//    init (countCar: Int, conditionalCar: Bool){
+//        self.countCar = countCar
+//        self.conditionalCar = conditionalCar
+//        super.init (markCar1: String, isClear1: Bool)
+//    }
+//}
+
+
+var item_1: Int = 5
+var item_2: Int = 3
+var item_3 = item_1 + item_2
+var item_4: String = "Yolochka"
+
+print (item_1)
+print (item_2)
+print (item_3)
+print (item_4)
+print ("\(item_3)" + item_4)
+//print("\(item_3)" * item_4 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
